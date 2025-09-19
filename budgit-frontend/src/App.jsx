@@ -1,14 +1,12 @@
 import { Link, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App()
 {
   return(
     <div className="p-6">
       <nav className="flex gap-4 mb-6">
-        <Link to="/" className="text-blue-600">Home</Link>
-        <Link to="/Login" className="text-blue-600">Login</Link>
-        <Link to="/SignUp" className="text-blue-600">SignUp</Link>
-        <Link to="/dashboard" className="text-blue-600">Dashboard</Link>
+        
       </nav>
 
 
