@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 function App()
 {
   return(
+    
     <div className="p-6">
       <nav className="flex gap-4 mb-6">
         
