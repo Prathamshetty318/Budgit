@@ -1,23 +1,38 @@
-import { Link, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-
-function App()
-{
-  return(
-    
-    <div className="p-6">
-      <nav className="flex gap-4 mb-6">
-        
-      </nav>
+import { Routes, Route } from "react-router-dom";
+import PublicLayout from "./layouts/PublicLayout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 
-      <Routes>
-        <Route path="/" element={<h1>Welcome To Budgit</h1>}/>
-        <Route path="/Login" element={<h1>Login Page</h1>}/>
-        <Route path="/SignUp" element={<h1>SignUp Page</h1>}/>
-        <Route path="/dashboard" element={<h1>Dashboard Page</h1>}/>
-      </Routes>
-    </div>
+function App() {
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <PublicLayout>
+            <Home />
+          </PublicLayout>
+        }
+      />
+      <Route
+        path="/about"
+        element={
+          <PublicLayout>
+            <About />
+          </PublicLayout>
+        }
+      />
+      <Route
+        path="/contact"
+        element={
+          <PublicLayout>
+            <Contact />
+          </PublicLayout>
+        }
+      />
+    </Routes>
   );
 }
 
