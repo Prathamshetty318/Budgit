@@ -20,7 +20,7 @@ return (
                     <div>
                         <h3 className="font-semibold mb-2">More</h3>
                         <ul className="space-y-1">
-                            <li><Link to="/privacy" className="text-gray-200 hover:text-white hover:underline">Privacy Policy</Link></li>
+                            <li><Link to="/Privacypolicy" className="text-gray-200 hover:text-white hover:underline">Privacy Policy</Link></li>
                             <li><Link to="/faq" className="text-gray-200 hover:text-white hover:underline">FAQ</Link></li>
                             <li><a href="http://www.facebook.com" className="text-gray-200 hover:text-white hover:underline" target="_blank" rel="noreferrer">Facebook</a></li>
                             <li><a href="http://www.instagram.com" className="text-gray-200 hover:text-white hover:underline" target="_blank" rel="noreferrer">Instagram</a></li>
