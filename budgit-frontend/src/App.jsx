@@ -5,6 +5,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privacypolicy from "./pages/Privacypolicy";
 import FAQ from "./pages/FAQ";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
@@ -14,7 +16,8 @@ function App() {
       <Route path="/contact" element={<PublicLayout><Contact /></PublicLayout>} />
       <Route path="/privacypolicy" element={<PublicLayout><Privacypolicy /></PublicLayout>} />
       <Route path="/FAQ" element={<PublicLayout><FAQ /></PublicLayout>} />
-
+      <Route path="/Login" element={<PublicLayout><Login /></PublicLayout>} />
+      <Route path="/Signup" element={<PublicLayout><Signup/></PublicLayout>}/>
     </Routes>
   );
 }

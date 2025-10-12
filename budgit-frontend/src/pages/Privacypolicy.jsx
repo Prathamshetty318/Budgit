@@ -51,7 +51,10 @@ function Privacypolicy() {
       title: "✨ Contact Us ✨",
       content: [
         "If you have any questions or concerns about this Privacy Policy, please contact us at:",
-        "📧 support@budgitapp.com"
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=support@budgit.com"
+                        target = "blank_"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline">support@budgit.com</a>
       ]
     }
   ];
