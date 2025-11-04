@@ -7,6 +7,9 @@ import Privacypolicy from "./pages/Privacypolicy";
 import FAQ from "./pages/FAQ";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Forgotpassword from "./pages/ForgotPassword";
+import Resetpassword from "./pages/Resetpassword";
+
 
 function App() {
   return (
@@ -17,7 +20,9 @@ function App() {
       <Route path="/privacypolicy" element={<PublicLayout><Privacypolicy /></PublicLayout>} />
       <Route path="/FAQ" element={<PublicLayout><FAQ /></PublicLayout>} />
       <Route path="/Login" element={<PublicLayout><Login /></PublicLayout>} />
-      <Route path="/Signup" element={<PublicLayout><Signup/></PublicLayout>}/>
+      <Route path="/Signup" element={<PublicLayout><Signup /></PublicLayout>}/>
+      <Route path="/Forgotpassword" element={<PublicLayout><Forgotpassword /></PublicLayout>}/>
+      <Route path="/Resetpassword" element={<PublicLayout><Resetpassword /></PublicLayout>}/>
     </Routes>
   );
 }

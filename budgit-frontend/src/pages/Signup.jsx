@@ -70,7 +70,7 @@ function Signup() {
             onChange={handleCaptcha}
             />
         </div>
-        {/* Secret key: 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe*/}
+        {/*S ecret key: 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe*/}
 
 
         <button

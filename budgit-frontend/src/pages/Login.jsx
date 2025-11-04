@@ -58,7 +58,7 @@ function Login() {
             Don't have an account? <a href="/signup" className="text-blue-500 hover:underline">Sign Up</a>
             </p>
             <p className="mt-2 text-center">
-            <a href="/reset-password" className="text-blue-500 hover:underline">Forgot Password?</a>
+            <a href="/Forgotpassword" className="text-blue-500 hover:underline">Forgot Password?</a>
             </p>
         </form>
         </div>
