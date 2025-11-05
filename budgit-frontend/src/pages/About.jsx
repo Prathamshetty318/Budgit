@@ -20,8 +20,13 @@ function About(){
                     <p className="ms-5 font-semibold hover:underline">👉 Take the stress out of money management, so you can focus on living life.</p><br></br>
                     <p className="ms-5 font-semibold hover:underline"> - “Budgit — Because every rupee counts.”</p>
                 </div>
-                <h1 className="text-2xl font-italic">Budgit</h1>
-            </div>
+                <div className="item-center justify-center">
+                <h1 className="font-semibold item-center text-2xl justify-center">Budgit</h1><br></br>
+                <p>Track Your expenses without any worry :)</p>
+                <p className="text-gray-800">&copy; {new Date().getFullYear()} Budgit. All rights reserved.</p>
+            
+                </div>
+                </div>
         </div>
     );
 }

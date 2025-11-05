@@ -30,10 +30,10 @@ function Signup() {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-50 overflow-x-hidden">
+        <div className="flex items-center justify-center min-h-screen  overflow-x-hidden">
         <form
             onSubmit={handleSubmit}
-            className="bg-white shadow-md rounded-lg p-8 w-full max-w-md"
+            className="bg-blue-300 shadow-md rounded-lg p-8 w-full max-w-md"
         >
         <h1 className="text-2xl font-bold mb-6 text-gray-800">Sign Up :</h1>
 
