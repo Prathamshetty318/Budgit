@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Forgotpassword from "./pages/ForgotPassword";
 import Resetpassword from "./pages/Resetpassword";
-
+import Settings from "./pages/Settings";
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
       <Route path="/Signup" element={<PublicLayout><Signup /></PublicLayout>}/>
       <Route path="/Forgotpassword" element={<PublicLayout><Forgotpassword /></PublicLayout>}/>
       <Route path="/Resetpassword" element={<PublicLayout><Resetpassword /></PublicLayout>}/>
+      <Route path="/Settings" element={<PublicLayout><Settings /></PublicLayout>}/>
     </Routes>
   );
 }

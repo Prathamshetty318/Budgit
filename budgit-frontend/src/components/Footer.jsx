@@ -31,10 +31,10 @@ return (
                     <div>
                         <h3 className="font-semibold mb-2">Account</h3>
                         <ul className="space-y-1">
-                            <li><Link to="/login" className="text-gray-200 hover:text-white hover:underline">Login</Link></li>
-                            <li><Link to="/signup" className="text-gray-200 hover:text-white hover:underline">Signup</Link></li>
-                            <li><Link to="/resetpassword" className="text-gray-200 hover:text-white hover:underline">Reset Password</Link></li>
-                            <li><Link to="/setting" className="text-gray-200 hover:text-white hover:underline">Settings</Link></li>
+                            <li><Link to="/Login" className="text-gray-200 hover:text-white hover:underline">Login</Link></li>
+                            <li><Link to="/Signup" className="text-gray-200 hover:text-white hover:underline">Signup</Link></li>
+                            <li><Link to="/Resetpassword" className="text-gray-200 hover:text-white hover:underline">Reset Password</Link></li>
+                            <li><Link to="/settings" className="text-gray-200 hover:text-white hover:underline">Settings</Link></li>
                         </ul>
                     </div>
                     
