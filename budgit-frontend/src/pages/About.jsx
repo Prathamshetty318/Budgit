@@ -20,7 +20,7 @@ function About(){
                     <p className="ms-5 font-semibold hover:underline">👉 Take the stress out of money management, so you can focus on living life.</p><br></br>
                     <p className="ms-5 font-semibold hover:underline"> - “Budgit — Because every rupee counts.”</p>
                 </div>
-                <img src= "/budgitlogo1.png" className="w-100 hidden lg:block"/>
+                <h1 className="text-2xl font-italic">Budgit</h1>
             </div>
         </div>
     );

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import PublicLayout from "./layouts/PublicLayout";
 import Home from "./pages/Home";
@@ -12,19 +13,38 @@ import Resetpassword from "./pages/Resetpassword";
 import Settings from "./pages/Settings";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  const [language, setLanguage] = useState("hi");
+
   return (
-    <Routes>
-      <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
-      <Route path="/about" element={<PublicLayout><About /></PublicLayout>} />
-      <Route path="/contact" element={<PublicLayout><Contact /></PublicLayout>} />
-      <Route path="/privacypolicy" element={<PublicLayout><Privacypolicy /></PublicLayout>} />
-      <Route path="/FAQ" element={<PublicLayout><FAQ /></PublicLayout>} />
-      <Route path="/Login" element={<PublicLayout><Login /></PublicLayout>} />
-      <Route path="/Signup" element={<PublicLayout><Signup /></PublicLayout>}/>
-      <Route path="/Forgotpassword" element={<PublicLayout><Forgotpassword /></PublicLayout>}/>
-      <Route path="/Resetpassword" element={<PublicLayout><Resetpassword /></PublicLayout>}/>
-      <Route path="/Settings" element={<PublicLayout><Settings /></PublicLayout>}/>
-    </Routes>
+    <div
+      className={
+        darkMode
+          ? "dark bg-gray-900 text-white min-h-screen"
+          : "bg-gray-50 text-gray-900 min-h-screen"
+      }
+    >
+      <Routes>
+        <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
+        <Route path="/about" element={<PublicLayout><About /></PublicLayout>} />
+        <Route path="/contact" element={<PublicLayout><Contact /></PublicLayout>} />
+        <Route path="/privacypolicy" element={<PublicLayout><Privacypolicy /></PublicLayout>} />
+        <Route path="/FAQ" element={<PublicLayout><FAQ /></PublicLayout>} />
+        <Route path="/Login" element={<PublicLayout><Login /></PublicLayout>} />
+        <Route path="/Signup" element={<PublicLayout><Signup /></PublicLayout>} />
+        <Route path="/Forgotpassword" element={<PublicLayout><Forgotpassword /></PublicLayout>} />
+        <Route path="/Resetpassword" element={<PublicLayout><Resetpassword /></PublicLayout>} />
+        <Route
+          path="/Settings"
+          element={
+            <PublicLayout>
+              <Settings darkMode={darkMode} setDarkMode={setDarkMode} language={language} setLanguage={setLanguage}/>
+            </PublicLayout>
+          }
+        />
+      </Routes>
+    </div>
   );
 }
+
 export default App;
