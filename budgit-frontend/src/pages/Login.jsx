@@ -21,6 +21,7 @@ function Login() {
             console.log("Response from backend:", data);
 
             if(res.ok){
+                localStorage.setItem("token",data.token);
                 alert("Login Successful");
             }
             else{
