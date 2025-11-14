@@ -11,10 +11,10 @@ function Signup() {
     setCaptchaValue(value);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit =async (e) => {
         e.preventDefault();
 
-    if (password !== cpassword) {
+        if (password !== cpassword) {
         alert("Passwords do not match!");
         return;
     }
@@ -24,10 +24,32 @@ function Signup() {
         return;
     }
 
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Captcha:", captchaValue);
+
+    try {
+            const res = await fetch("http://localhost:5000/api/auth/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    email,
+                    password,
+                    confirmPassword: cpassword,
+                }),
+            });
+
+            const data = await res.json();
+            console.log("Response from backend:", data);
+
+            if (res.ok) {
+                alert("Registration successful!");
+            } else {
+                alert(data.message || "Registration failed!");
+            }
+        } catch (error) {
+            console.error("Signup error:", error);
+            alert("Something went wrong.");
+        }
     };
+
 
     return (
         <div className="flex items-center justify-center min-h-screen  overflow-x-hidden">
