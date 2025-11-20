@@ -11,6 +11,9 @@ import Signup from "./pages/Signup";
 import Forgotpassword from "./pages/ForgotPassword";
 import Resetpassword from "./pages/Resetpassword";
 import Settings from "./pages/Settings";
+import ProtectdRoute from "./components/ProtectedRoute";
+import PrivateLayout from "./layouts/PrivateLayout";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -42,6 +45,7 @@ function App() {
             </PublicLayout>
           }
         />
+        <Route path="/dashboard" element={<ProtectdRoute><PrivateLayout><Dashboard /></PrivateLayout></ProtectdRoute>}/>
       </Routes>
     </div>
   );
