@@ -41,6 +41,7 @@ function Signup() {
 
             if (res.ok) {
                 alert("Registration successful!");
+                window.location.href="/dashboard";
             } else {
                 alert(data.message || "Registration failed!");
             }

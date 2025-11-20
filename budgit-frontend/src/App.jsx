@@ -14,6 +14,8 @@ import Settings from "./pages/Settings";
 import ProtectdRoute from "./components/ProtectedRoute";
 import PrivateLayout from "./layouts/PrivateLayout";
 import Dashboard from "./pages/Dashboard";
+import Groups from "./pages/Groups";
+import Expenses from "./pages/Expenses";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -46,6 +48,8 @@ function App() {
           }
         />
         <Route path="/dashboard" element={<ProtectdRoute><PrivateLayout><Dashboard /></PrivateLayout></ProtectdRoute>}/>
+        <Route path="/groups" element={<ProtectdRoute><PrivateLayout><Groups /></PrivateLayout></ProtectdRoute>}/>
+        <Route path="/expenses" element={<ProtectdRoute><PrivateLayout><Expenses /></PrivateLayout></ProtectdRoute>}/>
       </Routes>
     </div>
   );

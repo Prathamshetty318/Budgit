@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 
-function PrivateLayot({childern}){
+function PrivateLayout({children}){
 
     return (
         <div className='min-h-screen flex flex-col bg-gray-100'>
@@ -24,9 +24,9 @@ function PrivateLayot({childern}){
 
             </nav>
 
-            <main className='flex-grow'>{childern}</main>
+            <main className='flex-grow'>{children}</main>
         </div>
     );
 }
 
-export default PrivateLayot;
+export default PrivateLayout;
