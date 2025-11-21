@@ -33,13 +33,13 @@ function Dashboard(){
                 <h2 className="text-2xl font-bold mb-3">Quick Actions</h2>
                 <div className="flex gap-4">
                     <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                        Add Expense
+                        ➕ Add Expense
                     </button>
                     <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
-                        Create Group
+                        👥 Create Group
                     </button>
                     <button className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">
-                        View All Expenses
+                        📄 View All Expenses
                     </button>
                 </div>
             </div>
