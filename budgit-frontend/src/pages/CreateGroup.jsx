@@ -1,13 +1,17 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CreateGroup(){
 
     const [name,setName] = useState("");
     const [members,setMembers] = useState("");
 
+    const navigate = useNavigate();
+
     const handleSubmit=(e)=>{
         e.preventDefault();
-        alert(`Group Created`)
+        alert(`Group Created`);
+        navigate("/groups");
     }
 
     return(

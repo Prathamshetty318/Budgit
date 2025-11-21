@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AddExpenses(){
 
@@ -7,10 +8,13 @@ function AddExpenses(){
     const [group, setGroup] = useState("");
     const [paidby , setPaidby] = useState("");
 
+    const navigate = useNavigate();
+
     const handleSubmit = (e)=>{
         e.preventDefault();
 
-        alert(`Expense Added:`)
+        alert(`Expense Added:`);
+        navigate("/expenses")
     };
 
     return(
