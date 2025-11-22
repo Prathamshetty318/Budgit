@@ -26,7 +26,7 @@ function Groups(){
                         <h2 className="text-xl font-bold">{g.name}</h2>
                         <p className="text-gray-600">{g.members}</p>
 
-                        <Link to={`/group/${g.id}`}
+                        <Link to={`/groupdetails/${g.id}`}
                         className="text-blue-600 hover:underline mt-2 inline-block">
                             View Group
                         </Link>

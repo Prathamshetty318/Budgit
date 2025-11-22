@@ -59,6 +59,10 @@ function Expenses(){
                                 <button className='text-blue-600 hover:underline'>Edit</button>
                                 <button className='text-red-600 hover:underline'>Delete</button>
                             </div>
+                            <Link to={`/expensedetails/${exp.id}`}
+                            className='text-blue-600 hover:underline mt-2 inline-block'>
+                                View Expense Details
+                            </Link>
                         </div>
                     </div>
                 ))}

@@ -18,6 +18,7 @@ import Groups from "./pages/Groups";
 import Expenses from "./pages/Expenses";
 import CreateGroup from "./pages/CreateGroup";
 import AddExpenses from "./pages/AddExpenses";
+import ExpenseDetails from "./pages/ExpenseDetails";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -54,6 +55,7 @@ function App() {
         <Route path="/expenses" element={<ProtectdRoute><PrivateLayout><Expenses /></PrivateLayout></ProtectdRoute>}/>
         <Route path="/creategroup" element={<ProtectdRoute><PrivateLayout><CreateGroup /></PrivateLayout></ProtectdRoute>}/>
         <Route path="/addexpenses" element={<ProtectdRoute><PrivateLayout><AddExpenses /></PrivateLayout></ProtectdRoute>}/>
+        <Route path="/expensedetails/:id" element={<ProtectdRoute><PrivateLayout><ExpenseDetails /></PrivateLayout></ProtectdRoute>}/>
       </Routes>
     </div>
   );
