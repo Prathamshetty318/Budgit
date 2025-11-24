@@ -1,4 +1,4 @@
-import pool from "../config/db.js"
+import pool from "../config/db.js";
 
 export const createGroup = async(name,description, createdby)=>{
     const result = await pool.query("Insert into groups(name,descripyion,created_by) VALUES ($1,$2,$3) returning *",

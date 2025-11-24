@@ -1,4 +1,4 @@
-import {createGroup, addMemberToGroup, getGroupByUser,getGroupDetails} from "../models/groupModel"
+import {createGroup, addMemberToGroup, getGroupByUser,getGroupDetails} from "../models/groupModel.js";
 
 
 export const createNewGroup = async(req,res)=>{

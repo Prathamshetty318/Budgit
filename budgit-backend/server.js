@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import pool from "./config/db.js";
 import authRoutes from './routes/authRoutes.js';
+import groupRoutes from "./routes/groupRoutes.js"
 
 dotenv.config();
 
@@ -19,6 +20,8 @@ pool.connect()
     .catch(err => console.error("db connection failed", err));
 
     app.use('/api/auth', authRoutes);
+    app.use("/api/groups",groupRoutes)
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on Port ${PORT}`));
