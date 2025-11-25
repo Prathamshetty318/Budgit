@@ -1,15 +1,15 @@
 import pool from "../config/db.js";
 
 export const createGroup = async(name,description, createdby)=>{
-    const result = await pool.query("Insert into groups(name,descripyion,created_by) VALUES ($1,$2,$3) returning *",
+    const result = await pool.query("Insert into groups(name,description,created_by) VALUES ($1,$2,$3) returning *",
         [name,description,createdby]);
         return result.rows[0];
 
 };
 
 export const addMemberToGroup = async(group_Id,userId)=>{
-    const result = await pool.query("Insert into groupmembers(group_id,user_id) values ($1,$2)"
-        ,[group_Id,userId]);
+    const result = await pool.query("Insert into group_members(group_id,user_id) values ($1,$2)",
+        [group_Id,userId]);
 };
 
 

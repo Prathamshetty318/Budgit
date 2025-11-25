@@ -20,7 +20,7 @@ pool.connect()
     .catch(err => console.error("db connection failed", err));
 
     app.use('/api/auth', authRoutes);
-    app.use("/api/groups",groupRoutes)
+    app.use("/api/groups",groupRoutes);
 
 
 const PORT = process.env.PORT || 5000;

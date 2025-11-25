@@ -2,6 +2,9 @@ import {createGroup, addMemberToGroup, getGroupByUser,getGroupDetails} from "../
 
 
 export const createNewGroup = async(req,res)=>{
+
+    console.log("req.user:", req.user);
+
     try{
         const{name,description} = req.body;
         const userId = req.user.id //jwt se aayegs
