@@ -11,7 +11,7 @@ import Signup from "./pages/Signup";
 import Forgotpassword from "./pages/ForgotPassword";
 import Resetpassword from "./pages/Resetpassword";
 import Settings from "./pages/Settings";
-import ProtectdRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 import PrivateLayout from "./layouts/PrivateLayout";
 import Dashboard from "./pages/Dashboard";
 import Groups from "./pages/Groups";
@@ -51,13 +51,13 @@ function App() {
             </PublicLayout>
           }
         />
-        <Route path="/dashboard" element={<ProtectdRoute><PrivateLayout><Dashboard /></PrivateLayout></ProtectdRoute>}/>
-        <Route path="/groups" element={<ProtectdRoute><PrivateLayout><Groups /></PrivateLayout></ProtectdRoute>}/>
-        <Route path="/expenses" element={<ProtectdRoute><PrivateLayout><Expenses /></PrivateLayout></ProtectdRoute>}/>
-        <Route path="/creategroup" element={<ProtectdRoute><PrivateLayout><CreateGroup /></PrivateLayout></ProtectdRoute>}/>
-        <Route path="/addexpenses" element={<ProtectdRoute><PrivateLayout><AddExpenses /></PrivateLayout></ProtectdRoute>}/>
-        <Route path="/expensedetails/:id" element={<ProtectdRoute><PrivateLayout><ExpenseDetails /></PrivateLayout></ProtectdRoute>}/>
-        <Route path="/groupdetails/:id" element={<ProtectdRoute><PrivateLayout><GroupDetails /></PrivateLayout></ProtectdRoute>}/>
+        <Route path="/dashboard" element={<ProtectedRoute><PrivateLayout><Dashboard /></PrivateLayout></ProtectedRoute>}/>
+        <Route path="/groups" element={<ProtectedRoute><PrivateLayout><Groups /></PrivateLayout></ProtectedRoute>}/>
+        <Route path="/expenses" element={<ProtectedRoute><PrivateLayout><Expenses /></PrivateLayout></ProtectedRoute>}/>
+        <Route path="/creategroup" element={<ProtectedRoute><PrivateLayout><CreateGroup /></PrivateLayout></ProtectedRoute>}/>
+        <Route path="/addexpenses" element={<ProtectedRoute><PrivateLayout><AddExpenses /></PrivateLayout></ProtectedRoute>}/>
+        <Route path="/expensedetails/:id" element={<ProtectedRoute><PrivateLayout><ExpenseDetails /></PrivateLayout></ProtectedRoute>}/>
+        <Route path="/groupdetails/:id" element={<ProtectedRoute><PrivateLayout><GroupDetails /></PrivateLayout></ProtectedRoute>}/>
       </Routes>
     </div>
   );

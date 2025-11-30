@@ -8,7 +8,7 @@ export const createGroup = async(name,description, createdby)=>{
 };
 
 export const addMemberToGroup = async(group_Id,userId)=>{
-    const result = await pool.query("Insert into group_members(group_id,user_id) values ($1,$2)",
+    await pool.query("Insert into group_members(group_id,user_id) values ($1,$2)",
         [group_Id,userId]);
 };
 
