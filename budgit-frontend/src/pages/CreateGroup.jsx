@@ -8,37 +8,44 @@ function CreateGroup(){
 
     const navigate = useNavigate();
 
-    const handleSubmit=async (e)=>{
-        e.preventDefault();
+    const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        try{
-            const token=localStorage.getItem("token");
+    try {
+    const token = localStorage.getItem("token");
 
-            const res = await fetch("http:localhost:5000/api/groups/create",{
-                method:"Post",
-                headers:{
-                    "content-Type":"application/json",
-                    Authorization:`Bearer${token}`,
-                },
-                body: JSON.stringify({name, description}),
-            });
+    const res = await fetch("http://localhost:5000/api/groups/create", {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}` // ✅ BACKTICKS
+        },
+        body: JSON.stringify({ name, description })
+    });
 
-            const data= await res.json();
-            console.log(data);
+    if (!res.ok) {
+        const text = await res.text();   // ✅ SAFE
+        console.error("Backend error:", text);
+        alert("Failed to create group");
+        return;
+    }
 
-            if(res.ok){
-                alert("Group created successfully");
-            }
-            else{
-                alert (data.message||"Failed to create Group");
-            }
-            }catch (error){
-                console.error("Error",error);
-                alert("Something went wrong")
+    const data = await res.json();
+    console.log(data);
 
-        }
-        navigate("/groups");
-    };
+    alert("Group created successfully!");
+    navigate("/groups");
+
+    } catch (error) {
+        console.error("Create group error:", error);
+        alert("Something went wrong");
+    }
+
+    navigate("/groups");
+};
+
+        
+
 
     return(
         <div className="p-6 max-w-md mx-auto">
