@@ -24,9 +24,9 @@ export const createNewGroup = async(req,res)=>{
 
 export const getUserGroups = async(req,res)=>{
     try{
-        const userId= req.user.body;
-        const groups = await getGroupByUser(userId);
-        res.json(groups);
+        const user_Id= req.user.id;
+        const groups = await getGroupByUser(user_Id);
+        res.status(200).json(groups);
     }catch(error){
         console.error("Fetch group error:",error);
         res.status(500).json({message:"Server Error"});
@@ -41,7 +41,7 @@ export const getSingleGroup = async(req,res)=>{
 
         if(!group) return res.status(404).json({message:"Group not found"});
 
-        res.json(group);
+        res.status(200).json(group);
     }catch(error){
         console.error("Group details error",error);
         res.status(500).json({message:"Server Error"});
