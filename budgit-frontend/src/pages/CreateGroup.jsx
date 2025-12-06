@@ -18,13 +18,13 @@ function CreateGroup(){
         method: "POST",
         headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}` // ✅ BACKTICKS
+        Authorization: `Bearer ${token}`
         },
         body: JSON.stringify({ name, description })
     });
 
     if (!res.ok) {
-        const text = await res.text();   // ✅ SAFE
+        const text = await res.text();
         console.error("Backend error:", text);
         alert("Failed to create group");
         return;
@@ -44,7 +44,6 @@ function CreateGroup(){
     navigate("/groups");
 };
 
-        
 
 
     return(
