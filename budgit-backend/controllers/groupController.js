@@ -1,18 +1,28 @@
 import {createGroup, addMemberToGroup, getGroupByUser,getGroupDetails} from "../models/groupModel.js";
-
+import {findUserByEmail} from "../models/userModel.js";
 
 export const createNewGroup = async(req,res)=>{
 
     console.log("req.user:", req.user);
 
     try{
-        const{name,description} = req.body;
+        const{name,description, members} = req.body;
         const userId = req.user.id //jwt se aayegs
 
         if(!name) return res.status(400).json({message:"Group name is requires"});
 
         const group = await createGroup(name,description,userId);
         await addMemberToGroup(group.id, userId);
+
+        if(Array.isArray(members)&& members.length>0){
+            for (let email of members){
+                    const user = await findUserByEmail(email);
+
+                    if(user && user.id !== userId){
+                        await addMemberToGroup(group.id, user.id);
+                }
+            }
+        }
 
         res.status(201).json({message:"Group created Succesfully",group});
 
