@@ -5,6 +5,7 @@ function CreateGroup(){
 
     const [name,setName] = useState("");
     const [description,setDescription] = useState("");
+    const [members, setMembers] = useState(""); // gonna make it comma seperated for multiple members.
 
     const navigate = useNavigate();
 
@@ -14,13 +15,27 @@ function CreateGroup(){
     try {
     const token = localStorage.getItem("token");
 
+    if(!token){
+        alert("Token Expired");
+        navigate("/login");
+        return;
+    }
+
+    const memberEmails = members
+    .split(",")
+    .map((m)=>m.trim())
+    .filter((m)=>m!=="");
+
     const res = await fetch("http://localhost:5000/api/groups/create", {
         method: "POST",
         headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`
         },
-        body: JSON.stringify({ name, description })
+        body: JSON.stringify({ name,
+            description,
+            members: memberEmails, //sending arrays
+        }),
     });
 
     if (!res.ok) {
@@ -71,6 +86,19 @@ function CreateGroup(){
                     placeholder="Goa Trip"
                     value={description}
                     onChange={(e)=>setDescription(e.target.value)}/>
+                </div>
+
+                <div>
+                    <label className="block font-semibold ">
+                        Members (comma seperated emails)
+                    </label>
+                    <input
+                    type="text"
+                    className="border rounded p-2 w-full"
+                    placeholder="A@gmail.com, B@gmail.com"
+                    value={members}
+                    onChange={(e)=> setMembers(e.target.value)}/>
+                    
                 </div>
 
                 <button className="bg-blue-600 text-white px-4 py-2 rounded w-full hover:bg-blue-700">
