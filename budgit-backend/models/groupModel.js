@@ -26,3 +26,4 @@ export const getGroupDetails = async(group_Id)=>{
     const result = await pool.query(`select * from groups where id = $1`,[group_Id]);
     return result.rows[0];
 }
+
