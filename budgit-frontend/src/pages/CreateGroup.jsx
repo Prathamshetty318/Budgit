@@ -41,14 +41,12 @@ function CreateGroup(){
     if (!res.ok) {
         const text = await res.text();
         console.error("Backend error:", text);
-        alert("Failed to create group");
+        alert("Failed to create group member email might not exist");
         return;
     }
 
     const data = await res.json();
     console.log(data);
-
-    alert("Group created successfully!");
     navigate("/groups");
 
     } catch (error) {

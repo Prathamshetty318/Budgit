@@ -1,7 +1,7 @@
 import pool from "../config/db.js";
 
 export const findUserByEmail = async(email)=>{
-    const result = await pool.query("Select * from users where email = $1",[email]);
+    const result = await pool.query("Select id,email from users where email = $1",[email]);
     return result.rows[0];
 };
 

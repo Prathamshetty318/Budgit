@@ -4,18 +4,34 @@ import {findUserByEmail} from "../models/userModel.js";
 export const createNewGroup = async(req,res)=>{
 
     console.log("req.user:", req.user);
+    console.log("req.body:",req.body);
 
     try{
         const{name,description, members} = req.body;
         const userId = req.user.id //jwt se aayegs
 
+
         if(!name) return res.status(400).json({message:"Group name is requires"});
+
+        if(Array.isArray(members)){
+            for (let email of members){
+
+                    const user = await findUserByEmail(email);
+                    if(!user){
+                        return res.status(400).json({message:`User with email ${email} does not exist`});
+
+                    }
+
+                    
+            }
+        }
 
         const group = await createGroup(name,description,userId);
         await addMemberToGroup(group.id, userId);
 
-        if(Array.isArray(members)&& members.length>0){
+        if(Array.isArray(members)){
             for (let email of members){
+
                     const user = await findUserByEmail(email);
 
                     if(user && user.id !== userId){
