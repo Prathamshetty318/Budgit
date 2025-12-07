@@ -12,14 +12,6 @@ function Expenses(){
             date:"2025-11-20"
         },
         {
-            id:2,
-            description:"Rent for october",
-            amount:11000,
-            paidBy:"Nysa",
-            group:"Roommates",
-            date:"2025-11-01"
-        },
-        {
             id:3,
             description:"Cab Ride",
             amount:700,
