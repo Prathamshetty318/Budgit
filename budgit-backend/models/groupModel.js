@@ -27,3 +27,13 @@ export const getGroupDetails = async(group_Id)=>{
     return result.rows[0];
 }
 
+export const getGroupMembers = async(group_Id)=>{
+    const result = await pool.query(`select
+        u.id, u.email
+        from users u
+        join group_members gm on u.id = gm.user_id
+        where gm.group_id =$1`,
+    [group_Id]);
+
+    return result.rows;
+};
