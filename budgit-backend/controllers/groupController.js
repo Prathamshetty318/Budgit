@@ -1,4 +1,4 @@
-import {createGroup, addMemberToGroup, getGroupByUser,getGroupDetails} from "../models/groupModel.js";
+import {createGroup, addMemberToGroup, getGroupByUser,getGroupDetails,getGroupMembers} from "../models/groupModel.js";
 import {findUserByEmail} from "../models/userModel.js";
 
 export const createNewGroup = async(req,res)=>{
@@ -67,7 +67,10 @@ export const getSingleGroup = async(req,res)=>{
 
         if(!group) return res.status(404).json({message:"Group not found"});
 
-        res.status(200).json(group);
+        const members = await getGroupMembers(id);
+
+
+        res.status(200).json(group,members);
     }catch(error){
         console.error("Group details error",error);
         res.status(500).json({message:"Server Error"});
