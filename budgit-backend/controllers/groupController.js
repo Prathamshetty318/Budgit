@@ -70,9 +70,11 @@ export const getSingleGroup = async(req,res)=>{
         const members = await getGroupMembers(id);
 
 
-        res.status(200).json(group,members);
+        res.status(200).json({group,members});
     }catch(error){
         console.error("Group details error",error);
         res.status(500).json({message:"Server Error"});
     }
 };
+
+
