@@ -23,7 +23,6 @@ function GroupDetails() {
         );
 
         const data = await res.json();
-        console.log("API DATA:", data);
 
 
         if (!res.ok) {
