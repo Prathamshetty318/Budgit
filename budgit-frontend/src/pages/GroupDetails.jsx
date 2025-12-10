@@ -31,8 +31,8 @@ function GroupDetails() {
             return;
         }
 
-        setGroups(data.group || data);
-        setMembers(data.members || []);
+        setGroups(data.group);
+        setMembers(data.members);
         } catch (error) {
         console.error("Error Fetching Data:", error);
         }
