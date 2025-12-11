@@ -21,7 +21,7 @@ export const getExpenseByGroup = async(groupId)=>{
         from expenses e
         join users u on e.paid_by = u.id
         where e.group_id = $1
-        order by craeted_at desc`,
+        order by created_at desc`,
     [groupId]);
 
     return result.rows;
