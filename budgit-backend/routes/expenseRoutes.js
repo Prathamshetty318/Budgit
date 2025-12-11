@@ -8,7 +8,7 @@ router.post("/add",verifyToken,addExpense);  //new exp
 
 router.get("group/:groupId",verifyToken,getGroupExpenseController);  //get all exp from grp
 
-router.get("/:id",verifyToken.getSingleExpenseController);  //get single exp with split
+router.get("/:id",verifyToken,getSingleExpenseController);  //get single exp with split
 
 export default router;
 
