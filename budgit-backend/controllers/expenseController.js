@@ -26,7 +26,7 @@ export const addExpense = async(req,res)=>{
         const baseShare = Math.floor(rawShare *100)/100;
         let remaining = Number((total - baseShare * count).toFixed(2));
 
-        const splts =[];
+        const splits =[];
 
         for (let i = 0; i < members.length; i++) {
             let share = baseShare;
