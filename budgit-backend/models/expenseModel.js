@@ -16,12 +16,7 @@ export const addExpenseSplit = async(expenseId, userId, shareAmount)=>{
 };
 export const getExpenseByGroup = async (groupId) => {
     const result = await pool.query(`
-        SELECT
-        e.id,
-        e.description,
-        e.amount,
-        e.created_at,
-        u.email AS paid_by_email
+        SELECT e.id, e.description, e.amount, e.created_at, u.email AS paid_by_email
     FROM expenses e
     JOIN users u ON e.paid_by = u.id
     WHERE e.group_id = $1
