@@ -9,7 +9,7 @@ export const createExpense = async(groupId,description,amount,paidBy)=>{
     return result.rows[0];};
 
 export const addExpenseSplit = async(expenseId, userId, shareAmount)=>{
-    await pool.query(`instert into expense_split (expense_id,user_id,shareAmount)
+    await pool.query(`insert into expense_split (expense_id,user_id,shareAmount)
         values($1,$2,$3)`,
     [expenseId,userId,shareAmount]);
     
